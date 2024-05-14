@@ -12,7 +12,7 @@ module.exports = {
   },
   darkMode: "class",
   plugins: [
-    nextui(),
+    nextui({}),
     ({ addUtilities }) => {
       const newUtilities = {
         ".no-scrollbar::-webkit-scrollbar": {
