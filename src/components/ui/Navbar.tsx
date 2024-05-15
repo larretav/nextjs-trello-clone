@@ -12,26 +12,37 @@ import NextLink from "next/link";
 
 import { ThemeSwitch } from "@/components/ui/ThemeSwitch";
 import { FaTrello } from "react-icons/fa6";
+import { Button } from "@nextui-org/button";
+import { Link } from "@nextui-org/link";
+import { Logo } from "./Logo";
 
 export const Navbar = () => {
 
 
 	return (
-		<NextUINavbar maxWidth="xl" position="sticky" className="bg-transparent">
-			<NavbarContent className="basis-1/5 sm:basis-full" justify="start">
+		<NextUINavbar height="3.5rem" maxWidth="xl" position="sticky" isBlurred={false} className="bg-slate-100 dark:bg-slate-900 shadow-md">
+			<NavbarContent className="basis-1/5 sm:basis-full hidden md:flex" justify="start">
 				<NavbarBrand as="li" className="gap-3 max-w-fit ">
-					<NextLink className="flex justify-start items-center gap-1" href="/">
-						<FaTrello className="fill-blue-500" size={30}/>
-						<p className="font-bold bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">Taskify</p>
-					</NextLink>
+					<Logo />
 				</NavbarBrand>
 			</NavbarContent>
 
-			<NavbarContent
-				className="basis-1/5 sm:basis-full"
-				justify="end"
-			>
-				<NavbarItem className="flex gap-2">
+			<NavbarContent justify="start" className="flex md:hidden">
+				<NavbarItem>
+					<Button size="sm" variant="ghost" as={Link} href="/sign-in" className="bg-default-5 text-default-800">Login</Button>
+				</NavbarItem>
+			</NavbarContent>
+
+			<NavbarContent justify="end">
+				<NavbarItem className="hidden md:flex">
+					<Button size="sm" variant="ghost" as={Link} href="/sign-in" className="bg-default-5 text-default-800">Login</Button>
+				</NavbarItem>
+
+				<NavbarItem>
+					<Button size="sm" as={Link} href="/sign-up" className="bg-default-900 text-default-50">Obtén Taskify gratis</Button>
+				</NavbarItem>
+
+				<NavbarItem>
 					<ThemeSwitch />
 				</NavbarItem>
 			</NavbarContent>

@@ -35,13 +35,13 @@ export default function RootLayout({
 			<head />
 			<body
 				className={clsx(
-					"min-h-screen bg-slate-100 dark:bg-slate-950 font-sans antialiased",
+					"h-screen w-screen  bg-slate-50 dark:bg-slate-950 font-sans antialiased",
 					fontSans.variable
 				)}
 			>
 				<Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
 					<div className="relative flex flex-col h-screen">
-						<Navbar />
+						
 						<main >
 							{children}
 						</main>
