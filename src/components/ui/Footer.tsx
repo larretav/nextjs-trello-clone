@@ -6,29 +6,25 @@ import {
 	NavbarBrand,
 	NavbarItem,
 	NavbarMenuItem,
+	useNavbar
 } from "@nextui-org/navbar";
 
 import NextLink from "next/link";
 
-import { ThemeSwitch } from "@/components/ui/ThemeSwitch";
-import { FaTrello } from "react-icons/fa6";
-import { Button } from "@nextui-org/button";
 import { Link } from "@nextui-org/link";
 import { Logo } from "./Logo";
+import clsx from "clsx";
 
 export const Footer = () => {
 	return (
-		<footer className="h-[4rem]  absolute bottom-0 left-0 bg-transparent">
-			<NavbarContent className="w-fit hidden md:flex" justify="start">
-				<NavbarBrand as="li" className="gap-3 ">
+		<NextUINavbar as="footer" height="3rem" maxWidth="xl" position="sticky" isBlurred={false} className="bg-slate-100 dark:bg-slate-900 fixed bottom-0 left-0 top-auto">
+			<NavbarContent className="w-fit hidden md:flex">
+				<NavbarItem className="gap-3 max-w-fit ">
 					<Logo />
-				</NavbarBrand>
+				</NavbarItem>
 			</NavbarContent>
 
-			<NavbarContent
-				className="w-full"
-				justify="end"
-			>
+			<NavbarContent justify="end" className="w-full" >
 				<NavbarItem>
 					<Link color="foreground" size="sm" href="/privacy-policy">Políitica de Privacidad</Link>
 				</NavbarItem>
@@ -37,6 +33,6 @@ export const Footer = () => {
 					<Link color="foreground" size="sm" href="/service-terms">Términos de servicio</Link>
 				</NavbarItem>
 			</NavbarContent>
-		</footer>
+		</NextUINavbar>
 	);
 };
