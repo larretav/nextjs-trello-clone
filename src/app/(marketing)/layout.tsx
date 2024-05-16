@@ -6,9 +6,9 @@ export default function MarketingLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<div className="h-screen w-full relative">
+		<div className="w-full box-border ">
 			<Navbar />
-			<main className="pt-40 pb-20">
+			<main className="pt-32 pb-32 box-border ">
 				{children}
 			</main>
 			<Footer />

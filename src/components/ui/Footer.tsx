@@ -16,23 +16,22 @@ import { Logo } from "./Logo";
 import clsx from "clsx";
 
 export const Footer = () => {
+
 	return (
-		<NextUINavbar as="footer" height="3rem" maxWidth="xl" position="sticky" isBlurred={false} className="bg-slate-100 dark:bg-slate-900 fixed bottom-0 left-0 top-auto">
-			<NavbarContent className="w-fit hidden md:flex">
-				<NavbarItem className="gap-3 max-w-fit ">
+		<footer className="w-screen h-[3rem]  box-border flex items-center justify-center bg-slate-100 dark:bg-slate-900 fixed bottom-0 left-0">
+			<div className="w-full px-6 flex flex-row justify-between items-center max-w-7xl box-border">
+
+				<div>
 					<Logo />
-				</NavbarItem>
-			</NavbarContent>
+				</div>
 
-			<NavbarContent justify="end" className="w-full" >
-				<NavbarItem>
+				<div className="w-full flex flex-row justify-between md:justify-end items-center gap-5">
 					<Link color="foreground" size="sm" href="/privacy-policy">Políitica de Privacidad</Link>
-				</NavbarItem>
-
-				<NavbarItem>
 					<Link color="foreground" size="sm" href="/service-terms">Términos de servicio</Link>
-				</NavbarItem>
-			</NavbarContent>
-		</NextUINavbar>
-	);
+				</div>
+
+			</div>
+		</footer>
+	)
+
 };

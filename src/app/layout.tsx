@@ -13,9 +13,12 @@ export const metadata: Metadata = {
 		template: `%s - ${siteConfig.name}`,
 	},
 	description: siteConfig.description,
-	icons: {
-		icon: "/favicon.ico",
-	},
+	icons: [
+		{
+			url: '/logo.svg',
+			href: '/logo.svg'
+		}
+	]
 };
 
 export const viewport: Viewport = {
@@ -35,17 +38,12 @@ export default function RootLayout({
 			<head />
 			<body
 				className={clsx(
-					"h-screen w-screen  bg-slate-50 dark:bg-slate-950 font-sans antialiased",
+					"w-screen h-screen overflow-x-hidden bg-slate-50 dark:bg-slate-950 font-sans antialiased",
 					fontSans.variable
 				)}
 			>
-				<Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-					<div className="relative flex flex-col h-screen">
-						
-						<main >
-							{children}
-						</main>
-					</div>
+				<Providers themeProps={{ attribute: "class", defaultTheme: "dark" }} >
+					{children}
 				</Providers>
 			</body>
 		</html>

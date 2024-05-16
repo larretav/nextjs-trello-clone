@@ -1,8 +1,8 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-	name: "Trellify",
-	description: "Este proyecto es un clon de Trello",
+	name: "Taskify",
+	description: "Colabora, administra proyectos y alcanza altos niveles de productividad. ",
 	navItems: [
 		
 	],
