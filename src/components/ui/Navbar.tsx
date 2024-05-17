@@ -35,8 +35,8 @@ export const Navbar = () => {
 
 			<NavbarContent justify="end">
 				<NavbarItem className="hidden md:flex">
-					<Button size="sm" variant="ghost" as={Link} href="/sign-in" className="bg-default-5 text-default-800">Login</Button>
-				</NavbarItem>
+					<Button size="sm" variant="ghost" as={Link} href="/sign-in" className="bg-default-50 text-default-800">Login</Button>
+				</NavbarItem> 
 
 				<NavbarItem>
 					<Button size="sm" as={Link} href="/sign-up" className="bg-default-900 text-default-50">Obtén Taskify gratis</Button>
