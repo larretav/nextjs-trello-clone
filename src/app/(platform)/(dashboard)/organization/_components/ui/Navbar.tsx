@@ -1,6 +1,5 @@
-import { Logo, ThemeSwitch } from "@/components";
+import { Button, Logo, ThemeSwitch } from "@/components";
 import { OrganizationSwitcher, UserButton } from "@clerk/nextjs";
-import { Button } from "@nextui-org/button";
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -33,11 +32,11 @@ export const Navbar = () => {
         </NavbarBrand>
 
         <NavbarItem>
-          <Button size="sm" className="bg-default-800 text-default-50 hidden md:flex">
+          <Button color="black" size="sm" className="hidden md:flex">
             Crear
           </Button>
 
-          <Button isIconOnly size="md" className="bg-default-800 text-default-50 flex md:hidden">
+          <Button isIconOnly color="black" size="md" className="flex md:hidden">
             <FaPlus />
           </Button>
         </NavbarItem>
