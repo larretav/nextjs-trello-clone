@@ -18,8 +18,8 @@ import clsx from "clsx";
 export const Footer = () => {
 
 	return (
-		<footer className="w-screen h-[3rem]  box-border flex items-center justify-center bg-slate-100 dark:bg-slate-900 fixed bottom-0 left-0">
-			<div className="w-full px-6 flex flex-row justify-between items-center max-w-7xl box-border">
+		<footer className="w-screen h-[3rem] box-border flex items-center justify-center bg-slate-100 dark:bg-slate-900 fixed bottom-0 left-0">
+			<div className="w-full px-6 flex flex-row justify-between items-center box-border">
 
 				<div>
 					<Logo />

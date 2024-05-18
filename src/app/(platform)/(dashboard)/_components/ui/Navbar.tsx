@@ -25,7 +25,7 @@ export const Navbar = () => {
   }
 
   return (
-    <NextUINavbar height="3.5rem" maxWidth="xl" position="sticky" isBlurred={false} className="bg-slate-100 dark:bg-slate-900 shadow-md ">
+    <NextUINavbar height="3.5rem" maxWidth="full" position="sticky" isBlurred={false} className="bg-slate-100 dark:bg-slate-900 shadow-md ">
       <NavbarContent justify="start">
         <NavbarBrand className="gap-3 max-w-fit hidden md:flex">
           <Logo />
