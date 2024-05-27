@@ -3,12 +3,16 @@ import { IoMedalOutline } from "react-icons/io5";
 import localFont from "next/font/local";
 import clsx from "clsx";
 import { Poppins } from "@/config/fonts";
+import { auth } from "@clerk/nextjs/server";
 
 const headingFont = localFont({
   src: "../../../public/fonts/CalSans-SemiBold.woff2"
 });
 
 export default function MarketingPage() {
+
+  const userData = auth()
+  console.log({userData})
   return (
     <div className="flex flex-col justify-center items-center gap-4">
       <Chip
