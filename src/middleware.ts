@@ -3,8 +3,14 @@ import { NextResponse } from "next/server";
 
 const isPublicRoute = createRouteMatcher([
   '/',
-  // '/sign-in',
-  // '/sign-up',
+  '/about',
+  '/sign-in(.*)',
+  '/sign-up(.*)',
+]);
+
+const isSignInUpRoute = createRouteMatcher([
+  '/sign-in(.*)',
+  '/sign-up(.*)',
 ]);
 
 export default clerkMiddleware(
@@ -13,27 +19,20 @@ export default clerkMiddleware(
     const orgId = auth().orgId;
     const pathName = req.nextUrl.pathname
 
-    const isSignInOrSignUp = pathName === '/sign-in' || pathName === '/sign-up'
-
     let pathSelectOrg = '/select-org';
 
-    console.log({ userId, orgId, pathName })
-    if (pathName === '/') return;
+    if (isPublicRoute(req)) {
+      if (userId && isSignInUpRoute(req))
+        return NextResponse.redirect(new URL(orgId ? `/organization/${orgId}` : pathSelectOrg, req.url));
+    }
 
-    if (userId && isSignInOrSignUp)
-      return NextResponse.redirect(new URL(pathSelectOrg, req.url));
+    if (!isPublicRoute(req)) {
+      if (!userId)
+        auth().redirectToSignIn({ returnBackUrl: req.url });
 
-    // if (!userId && !isPublicRoute(req))
-    //   auth().redirectToSignIn({ returnBackUrl: req.url });
-
-    // if (userId && !orgId && pathName !== pathSelectOrg)
-    //   return NextResponse.redirect(new URL(pathSelectOrg, req.url));
-
-    // if (userId && isPublicRoute(req)) {
-    //   if (orgId)
-    //     pathSelectOrg = `/organization/${orgId}`;
-    //   return NextResponse.redirect(new URL(pathSelectOrg, req.url));
-    // }
+      if (userId && !orgId && pathName !== pathSelectOrg)
+        return NextResponse.redirect(new URL(pathSelectOrg, req.url));
+    }
 
   },
   {
@@ -41,9 +40,6 @@ export default clerkMiddleware(
     signUpUrl: '/sign-up',
     afterSignInUrl: '/select-org',
     afterSignUpUrl: '/select-org',
-    authorizedParties: [
-      '/',
-    ],
   }
 )
 

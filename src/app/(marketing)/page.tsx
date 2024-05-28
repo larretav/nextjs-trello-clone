@@ -12,7 +12,7 @@ const headingFont = localFont({
 export default function MarketingPage() {
 
   const userData = auth()
-  console.log({userData})
+  console.log({ userData })
   return (
     <div className="flex flex-col justify-center items-center gap-4">
       <Chip
