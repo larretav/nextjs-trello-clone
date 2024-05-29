@@ -31,7 +31,7 @@ export default function MarketingPage() {
       )}>Taskify ayuda a tu equipo a</h1>
 
       <div className={clsx(
-        "w-fit px-4 p-2 text-3 fc xxl md:text-6xl text-center text-white bg-gradient-to-r from-fuchsia-600 to-pink-600 rounded-2xl",
+        "w-fit px-4 p-2 text-3xl md:text-6xl text-center text-white bg-gradient-to-r from-fuchsia-600 to-pink-600 rounded-xl md:rounded-2xl ",
         headingFont.className
       )}>
         avanzar
